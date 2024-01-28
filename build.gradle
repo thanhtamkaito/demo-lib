@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+version = '0.1'
 
 java {
     sourceCompatibility = '17'
@@ -34,10 +34,11 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://github.com/thanhtamkaito/demo-lib")
+            url = uri("https://maven.pkg.github.com/thanhtamkaito/demo-lib")
             credentials {
                 username = "thanhtamkaito"
-                password = "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"
+                password = "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"
+                println "GitHubPackages build.gradle\n\tusername=$username\n\ttoken=$password"
             }
         }
     }
