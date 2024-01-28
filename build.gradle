@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'java-library'
+    id 'maven-publish'
     id 'org.springframework.boot' version '3.2.2'
     id 'io.spring.dependency-management' version '1.1.4'
 }
@@ -19,20 +21,29 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
         }
     }
-
     repositories {
         maven {
-            name = "GitHubPackagesDemo"
+            name = "GitHubPackages"
             url = uri("https://github.com/thanhtamkaito/demo-lib")
-//            credentials {
-//                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
-//                password = project.findProperty("gpr.token") ?: System.getenv("TOKEN_GITHUB")
-//            }
+            credentials {
+                username = "thanhtamkaito"
+                password = "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"
+            }
         }
     }
 }
+
+
 
 
 dependencies {
