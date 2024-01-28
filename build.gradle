@@ -37,7 +37,7 @@ publishing {
             url = uri("https://maven.pkg.github.com/thanhtamkaito/demo-lib")
             credentials {
                 username = "thanhtamkaito"
-                password = "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"
+                password = "xxxxxxxxxxxxxxxxxx"
                 println "GitHubPackages build.gradle\n\tusername=$username\n\ttoken=$password"
             }
         }
